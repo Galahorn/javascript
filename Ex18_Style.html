@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<p id ="txt">겁나 졸리네</p>
+<button i= "btn">스타일 변경</button>
+<script>
+     //addEventListener(어떤 이벤트, 어떤걸 실행시킬지) > 원하는 요소에 이벤트 부여하기.
+        document.getElementById("btn").addEventListener("click", function() {
+                //스타일을 제어하는 부분
+                document.getElementById("txt").style.color = "red";
+        })
+        
+    </script>
+</body>
+</html>

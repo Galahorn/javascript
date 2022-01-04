@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src = "jquery-3.6.0.min.js"></script>
+</head>
+<body>
+    <button onclick="data()">데이터 요청</button>
+    <script>
+
+        // 비동기 방식으로 데이터를 요청
+        function data(){
+            $.ajax({
+                // 1. 요청할 URL 페이지의 정보
+                url : "https://kobis.or.kr/kobisopenapi/webservice/rest/boxoffice/searchWeeklyBoxOfficeList.json?key=8bc2efedc4f61d2c7c15e038ffe71db5&targetDt=20211128",
+                // 2. type명시 기본값은 get
+                type : "get",
+                // 3. 보낼 데이터를 작성하는 공간 data (생략가능.)
+                //data : "데이터"
+                // 4. 성공했을때와 실패했을때를 구별
+                // 성공했을때.
+                success : function(res) {
+                    // 성공했을때 실행되는 로직을 작성 
+                    // 전체 영화제목만 출력(for)
+                    for(let i = 0; i < res.boxOfficeResult.weeklyBoxOfficeList.length; i++) {
+                        console.log(res.boxOfficeResult.weeklyBoxOfficeList[i].movieNm);
+                    }
+                },
+                error : function() {
+                    alert("요청 실패")
+                }
+            })
+        }
+    </script>
+</body>
+</html>

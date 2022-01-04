@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    // 형변환을 사용하는 이유는 내가 제작하는 페이지의 모든정보가 문자 데이터
+    // 입력받는 데이터 또한 문자데이터임. 고로 이를 연산하기 위해서는 숫자데이터로 변형!
+    // 이러한 이유로 형변환이 필요함.
+    let num = "3.14";
+    console.log(num);        
+    // 문자를 정수로 형변환.
+    console.log(parseInt(num));
+    // 문자를 실수로 형변환.        
+    console.log(parseFloat(num));
+   
+    let num2 = "5";
+    // 문자를 숫자로 바꾸는 형변환
+    console.log(Number(num));
+    console.log(Number(num2));
+
+    let num3 = 156;
+    // 숫자를 문자로 형변환 
+    console.log(String(num3));
+    
+    console.log(num3.toString(2));
+    </script>
+</body>
+</html>
